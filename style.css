@@ -362,6 +362,14 @@ body {
     text-transform: uppercase;
 }
 
+.sf-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+
 .image-caption {
     text-align: center;
     margin-top: var(--spacing-sm);
