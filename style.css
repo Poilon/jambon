@@ -337,6 +337,7 @@ body {
     box-shadow:
         inset 0 0 20px rgba(112, 66, 20, 0.1),
         0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
 }
 
 .image-placeholder {
@@ -364,6 +365,7 @@ body {
 
 .sf-img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 4/5;
@@ -453,6 +455,7 @@ body {
     border: 1px solid var(--couleur-or);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .produit-card:hover {
@@ -482,6 +485,7 @@ body {
 .produit-image {
     padding: var(--spacing-sm);
     padding-bottom: 0;
+    overflow: hidden;
 }
 
 .produit-image .image-placeholder {
@@ -494,6 +498,8 @@ body {
 
 .produit-img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     aspect-ratio: 1;
     object-fit: cover;
     display: block;
