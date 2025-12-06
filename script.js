@@ -196,4 +196,44 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.opacity = '1';
     });
 
+    // ================================================
+    // Lecteur audio
+    // ================================================
+    const musique = document.getElementById('musique');
+    const btnMusique = document.getElementById('btn-musique');
+    let isPlaying = false;
+
+    // Tenter de jouer automatiquement au premier clic sur la page
+    function startMusic() {
+        if (!isPlaying) {
+            musique.play().then(() => {
+                isPlaying = true;
+                btnMusique.textContent = '🔊';
+                btnMusique.classList.add('playing');
+            }).catch(() => {
+                // Autoplay bloqué, on attend le clic
+            });
+        }
+        document.removeEventListener('click', startMusic);
+    }
+
+    // Démarrer la musique au premier clic n'importe où
+    document.addEventListener('click', startMusic);
+
+    // Bouton pour toggle la musique
+    btnMusique.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (isPlaying) {
+            musique.pause();
+            btnMusique.textContent = '🔇';
+            btnMusique.classList.remove('playing');
+            isPlaying = false;
+        } else {
+            musique.play();
+            btnMusique.textContent = '🔊';
+            btnMusique.classList.add('playing');
+            isPlaying = true;
+        }
+    });
+
 });

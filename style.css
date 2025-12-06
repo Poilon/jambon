@@ -879,6 +879,40 @@ body {
 }
 
 /* ================================================
+   BOUTON MUSIQUE
+   ================================================ */
+.btn-musique {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--couleur-bordeaux);
+    border: 2px solid var(--couleur-or);
+    color: var(--couleur-creme);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn-musique:hover {
+    transform: scale(1.1);
+    background: var(--couleur-bordeaux-fonce);
+}
+
+.btn-musique.playing {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    50% { box-shadow: 0 4px 25px rgba(184, 134, 11, 0.5); }
+}
+
+/* ================================================
    ANIMATIONS
    ================================================ */
 @keyframes fadeInUp {
